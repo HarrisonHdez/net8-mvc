@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mt-5">
+    <div class="row">
+       
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <div class="border-left-primary">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Total magazines</h5>
+                        <p class="card-text">Content for the first card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <div class="border-left-success">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Subscribed to accounts</h5>
+                        <p class="card-text">Content for the second card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <div class="border-left-info">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">Your magazines</h5>
+                        <p class="card-text">Content for the third card.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+       
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card">
+                <div class="border-left-warning">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Your subscribers</h5>
+                        <p class="card-text">20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card card-maga" style="min-height: 500px;">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <h5 class="card-title text-center">Share your magazines with the world</h5>
+                    <form asp-controller="Magazine" asp-action="Upload" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="pdfFile" class="btn btn-primary ">
+                                Select a PDF magazine
+                                <input type="file" class="form-control-file d-none" id="pdfFile" name="pdfFile" accept=".pdf" required>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        All your magazines
+    </div>
+
+
+
+
+    @if (ViewData["Message"] != null)
+    {
+        <div class="alert alert-info" role="alert">
+            @ViewData["Message"]
+        </div>
+    }
+
+
+</div>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,68 @@
+﻿@model magaApp.ViewModels.LoginViewModels
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+
+</head>
+
+<body>
+
+    <div class="container-fluid full-height">
+        <div class="row h-100">
+          
+            <div class="d-none d-lg-block col-lg-6 p-0">
+                <img src="~/images/banner.png" alt="Banner" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            </div>
+
+           
+            <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+                <div class="col-lg-8 col-md-10 col-12">
+                    <div class="">
+                        <div class="card-header">
+                            <h2 class="mb-3">Login to your Account</h2>
+                            <p>See what is going on with your business</p>
+                        </div>
+                        <div class="card-body">
+                            <form asp-controller="Access" asp-action="Login" method="post">
+                                <div class="mb-4">
+                                    <label class="mb-2" for="Email">Email</label>
+                                    <input id="Email" class="form-control" type="text" placeholder="mail@abc.com" required asp-for="Email" />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="mb-2" for="Password">Password</label>
+                                    <input id="Password" class="form-control" type="password" placeholder="password" required asp-for="Password" />
+                                </div>
+                                <div class="d-grid gap-2 mb-3">
+                                    <button class="btn btn-primary" type="submit">Login</button>
+                                </div>
+
+                                @if (ViewData["Message"] != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        @ViewData["Message"]
+                                    </div>
+                                }
+
+                                <p class="mt-5 text-center registered">
+                                    Not Registered Yet? <a asp-controller="Access" asp-action="Signup">Create an account</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
